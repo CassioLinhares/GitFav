@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+    --ff-body: 'Poppins', sans-serif;
+
+    --bg-body: #131313;
+    --bg-input: #06181C;
+    --bg-btnFav: #065E7C;
+    --bg-btnFavHover: #fff;
+    --bg-table: #043444;
+    --bg-trPrimary: #092D38;
+    --bg-trSecondary: rgba(6, 22, 27, 0.5);
+
+    --fc-btnFav: #fff;
+    --fc-btnFavHover:#065E7C;
+    --fc-input: #7C7C8A;
+    --fc-table: #E1E1E6;
+    --fc-btnRemove: #F75A68;
+    --fc-tableBorder: #4A808C;
+    --fc-emptyFav: #4E5455;
+    --fc-scroll:#4a808c;
+}
+
+/* Works on Firefox- barra de rolagem */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--fc-scroll);
+  }
+  
+  /* Works on Chrome, Edge, and Safari - barra de rolagem */
+  *::-webkit-scrollbar {
+    width: .8rem;
+    height: .8rem;
+    scroll-behavior: smooth;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--fc-scroll);
+    border-radius: 2rem;
+    /* border: 1px solid var(--fc-scroll); */
+  }
+
+body{
+    background-color: var(--bg-body);
+}
+
+body *{
+    font-family: var(--ff-body);
+}
+
+#app{
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 5rem auto 5rem;
+}
+
+.logo{
+    width: 20rem;
+}
+
+header div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.sr_only{ 
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden; /*elimina o transbordar da caixa*/
+    clip: rect(0,0,0,0); /*cria uma caixa que não vai existir*/
+    white-space: nowrap; /*elimina quebra de linha*/
+    border-width: 0;
+}
+
+#input-search{
+    width: 33rem;
+    background-color: var(--bg-input);
+    color: var(--fc-input);
+    text-indent: 1rem;
+    border: none;
+    border-radius: .5rem;
+    padding: 1rem;
+    /* outline: none; */
+}
+
+header button{
+    background-color: var(--bg-btnFav);
+    color: var(--fc-btnFav);
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    border-radius: .5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    gap: .8rem;
+}
+
+header button:hover{
+    background-color: var(--bg-btnFavHover);
+    color: var(--fc-btnFavHover);
+}
+
+header button:hover svg path{
+    fill: var(--fc-btnFavHover);
+}
+
+.table-wrapper{
+    border: 1.5px solid var(--fc-tableBorder);
+    border-radius: 1.2rem;
+    /* overflow: overlay; */
+    overflow-x: hidden;
+    max-height: 45rem;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table *{
+    font-size: 2rem;
+    color: var(--fc-table);
+    font-weight: 700;
+    width: 100%;
+}
+
+table th{
+    padding: 1.6rem 2.4rem 1.6rem 4rem;
+    text-align: left;
+    background-color: var(--bg-table);
+}
+
+table tr{
+    border: 1.5px solid var(--fc-tableBorder); 
+    line-height: 160%; 
+}
+
+table tr:nth-child(odd){
+    background-color: var(--bg-trSecondary);
+}
+
+table tr:nth-child(even){
+    background-color: var(--bg-trPrimary);
+}
+
+table img{
+    width: 6rem;
+    border-radius: 50%;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+table td{
+    padding: 2.4rem 2.4rem 2.4rem 4rem;
+}
+
+table a{
+    text-decoration: none;
+}
+
+table span{
+    font-weight: 400;
+}
+
+table button{
+    background-color: transparent;
+    border: none;
+    color: var(--fc-btnRemove);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+table button:hover{
+    opacity: .8;
+}
+
+.empty-fav{
+   height: 32rem;
+} 
+
+.content-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.content-wrapper:first-child{
+    margin-left: 7rem;
+}
+
+.svg{
+    margin-right: -18rem;
+}
+
+.svg svg{
+    width: 100%;
+}
+
+.hide{
+    display: none;
+}
+
+@media(max-width: 700px){
+    header{
+       display: block;
+       margin: 2rem 1.5rem;
+    }
+    .logo{
+        width: 10rem;
+        margin-bottom: 2rem;
+    }
+    header div{
+        display: block;
+    }
+    #input-search{
+    width: 80%;
+    text-indent: 0rem;
+    margin-bottom: 1rem;
+    }
+
+    header button{
+        margin-bottom: 6rem;
+    }
+    .table-wrapper {
+        overflow: auto;
+        max-height: 60rem;
+        margin: 1.2rem;
+    }
+
+    .content-wrapper:first-child {
+        margin-left: 0rem;
+    }
+
+    .svg {
+        margin-right: -5rem;
+    }
+
+}
