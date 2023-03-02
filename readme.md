@@ -32,6 +32,6 @@
 
 🕛 **Status:** Concluído ✔
 
-🌎 **Result Preview: [Veja o Projeto]([https://github-favorites-one.vercel.app/])**
+🌎 **Result Preview: [Veja o projeto]([https://github-favorites-one.vercel.app/])**
 
 ☑️ **Task:** Desenvolver uma aplicação com várias funcionalidades, [Figma](https://www.figma.com/file/iCey0u5VLRrX55A4MjuilI/%5BDesafios-Explorer%5D-GitFav-(Copy)-(Copy)?node-id=104%3A48).
