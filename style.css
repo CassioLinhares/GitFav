@@ -246,6 +246,13 @@ table button:hover{
     header button{
         margin-bottom: 6rem;
     }
+    header button:hover{
+    background-color: var(--bg-btnFav);
+    color: var(--fc-btnFav);
+    }
+    header button:hover svg path{
+    fill: white;
+    }
     .table-wrapper {
         overflow: auto;
         max-height: 60rem;
